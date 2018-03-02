@@ -47,9 +47,7 @@ if($valid_form){
     //Connect to MYSQL Database mysqli(Server,User, Password,Database)
     $link = connectDB();
         
-    $sql = "SELECT LoginID 
-            FROM User 
-            WHERE LoginID =  '".$LoginID."';";
+    $sql = "SELECT LoginID FROM User WHERE LoginID =  '".$LoginID."';";
         
     $result=mysqli_query($link,$sql);
         
@@ -60,8 +58,7 @@ if($valid_form){
           
     else //insert if its a new login id
     {
-      $sql = "INSERT INTO User (ID, LoginID, Password, Name, AccountStatus)"." 
-              VALUE ('".null."', '".$LoginID."', '".$Password."', '".$Name."', 'Pending')";
+      $sql = "INSERT INTO User VALUES (null, '".$LoginID."', '".$Password."', '".$Name."', 'Pending')";
           
       $result=mysqli_query($link,$sql);
           
@@ -72,9 +69,6 @@ if($valid_form){
             
       if(mysqli_affected_rows($link) == 1) //if the insertion was successfull
       {
-        echo ("<script>
-                 window.location.assign('home.php');
-               </script>");
         $message = 'Thank you, your account is waiting for approval.';
       }
     }
@@ -90,5 +84,8 @@ if($valid_form){
     
     <body>
     <p></p><?php echo $message; ?>
+    <form action="index.php" method="post">
+      <input type="submit" value="Return"/>
+    </form>
     </body>
 </html>
