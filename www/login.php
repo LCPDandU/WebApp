@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Player Login</title>
+<title></title>
 </head>
 
 <!--<body style = "Color: #000000; background-color:#afbfff;">-->
