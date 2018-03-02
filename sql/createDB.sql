@@ -1,4 +1,4 @@
-drop table Event;
+drop table CalendarEvent;
 drop table Notification;
 
 create table CalendarEvent (
@@ -7,6 +7,7 @@ create table CalendarEvent (
     Category enum ('LCPD', 'LCFD', 'AnimalControl', 'Public'),
     EventDate date,
     EventStartTime time,
+    EventStartTimeAMPM enum ('AM', 'PM'),
     Location varchar(128),
     Description varchar(2048),
     Media1 longblob, -- longblob type allows for file of 4294967295 bytes ~ 4294 MB ~ 4 GB
@@ -18,7 +19,9 @@ create table Notification (
 	ID int unsigned not null primary key auto_increment,
     Title varchar(128),
     Description varchar(4096),
-    PostDate datetime
+    PostDate date,
+    PostTime time,
+    PostTimeAMPM enum ('AM', 'PM')
 );
 
 create table User (

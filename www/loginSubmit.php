@@ -1,7 +1,9 @@
 <?php
 
+//to connect to the database we do this
 include('config.php');
 
+//start the session so we can set global variables
 session_start();
 
 // Check if the user is already logged in  
