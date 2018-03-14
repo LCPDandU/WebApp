@@ -100,7 +100,7 @@
       </p>
       
       <p>
-      <label>Event Start Time</label>
+      <label>Notification Post Time</label>
          <input type="number" name="PostTimeHour" min="1" max="12" required/>
           : 
          <input type="number" name="PostTimeMinute" min="0" max="59" required/>

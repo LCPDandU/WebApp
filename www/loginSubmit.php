@@ -35,6 +35,7 @@ else
     // Store LoginID and Passwords as variables 
     $LoginID = filter_var($_POST['LoginID'], FILTER_SANITIZE_STRING);
     $Password = filter_var($_POST['Password'], FILTER_SANITIZE_STRING);
+    //hash password
     
     try
     {

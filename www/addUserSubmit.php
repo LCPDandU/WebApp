@@ -27,13 +27,13 @@ if(empty($_POST['Password']))
 } 
 
 //Check LoginId length
-if (strlen( $_POST['LoginID']) > 32 || strlen($_POST['LoginID']) < 4)
+else if (strlen($_POST['LoginID']) > 32 || strlen($_POST['LoginID']) < 4)
 {
     $message = 'LoginID length must be greater than 4 characters';
 }
 
 //check password length
-if (strlen( $_POST['Password']) > 32 || strlen($_POST['Password']) < 7)
+else if (strlen($_POST['Password']) > 32 || strlen($_POST['Password']) < 7)
 {
     $message = 'Password length must be greater than 7 characters';
 }
