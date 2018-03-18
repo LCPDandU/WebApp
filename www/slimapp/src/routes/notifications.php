@@ -47,4 +47,3 @@ $app->get('/api/notification/{id}', function(Request $request, Response $respons
       echo '{"error": {"text": '.$e->getMessage().'}';
     }
 });
-
